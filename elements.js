@@ -1,6 +1,6 @@
 /**
  * Helper class for constructing element trees
- * Version 1.4 (javascript)
+ * Version 1.5 (javascript)
  */
 class Elm {
     /**
@@ -118,6 +118,13 @@ class Elm {
     attribute(key, value) {
         this.elm.setAttribute(key, value || "true");
         return this;
+    }
+
+    /**
+     * @param {string} key 
+     */
+    removeAttribute(key) {
+        this.elm.removeAttribute(key);
     }
 
     /**

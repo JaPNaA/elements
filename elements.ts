@@ -1,6 +1,6 @@
 /**
  * Helper class for constructing element trees
- * Version 1.4 (typescript)
+ * Version 1.5 (typescript)
  */
 class Elm<T extends keyof HTMLElementTagNameMap = "div"> {
     protected elm: HTMLElementTagNameMap[T];
@@ -97,6 +97,10 @@ class Elm<T extends keyof HTMLElementTagNameMap = "div"> {
     attribute(key: string, value: string) {
         this.elm.setAttribute(key, value || "true");
         return this;
+    }
+
+    removeAttribute(key: string) {
+        this.elm.removeAttribute(key);
     }
 
     getHTMLElement(): HTMLElementTagNameMap[T] {
